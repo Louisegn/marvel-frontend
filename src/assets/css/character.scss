@@ -1,0 +1,15 @@
+.character-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  .character-img {
+    // height: 500px;
+    width: 420px;
+    object-fit: cover;
+  }
+  .info-part {
+    .description {
+      width: 420px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import "../assets/css/characters.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Characters = () => {
   const [data, setData] = useState();
@@ -31,10 +32,12 @@ const Characters = () => {
           console.log(elem);
           const charaImg = elem.thumbnail.path + "." + elem.thumbnail.extension;
           return (
-            <div>
-              <div>{elem.name}</div>
-
-              <img className="chara-img" src={charaImg} alt="" />
+            <div className="chara-info">
+              <Link to={`/character/${elem._id}`}>
+                <img className="chara-img" src={charaImg} alt="" />
+                <div>{elem.name}</div>
+                <div>{elem.description}</div>
+              </Link>
             </div>
           );
         })}

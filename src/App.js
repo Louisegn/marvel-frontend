@@ -10,6 +10,7 @@ import Header from "./components/Header";
 //pages
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
+import Character from "./pages/Character";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Characters />}></Route>
           <Route path="/comics" element={<Comics />}></Route>
+          <Route path="/character/:id" element={<Character />}></Route>
         </Routes>
       </Router>
     </div>

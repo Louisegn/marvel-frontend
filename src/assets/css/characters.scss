@@ -2,10 +2,18 @@
   .chara-container {
     display: flex;
     flex-wrap: wrap;
-  }
-  .chara-img {
-    height: 206px;
-    width: 194px;
-    object-fit: cover;
+    border: solid green 3px;
+
+    .chara-info {
+      border: blue solid 2px;
+      height: 356px;
+      width: 194px;
+
+      .chara-img {
+        height: 206px;
+        width: 194px;
+        object-fit: cover;
+      }
+    }
   }
 }
