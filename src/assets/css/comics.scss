@@ -1,0 +1,11 @@
+.comics-page {
+  .comics-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .comic-img {
+    height: 206px;
+    width: 194px;
+    object-fit: cover;
+  }
+}
