@@ -1,15 +1,39 @@
-.character-container {
+.chara-page-container {
   display: flex;
-  justify-content: center;
-  padding-top: 200px;
-  .character-img {
-    // height: 500px;
-    width: 420px;
-    object-fit: cover;
-  }
-  .info-part {
-    .description {
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  // padding-top: 100px;
+  .chara-card {
+    border: blue solid 2px;
+    display: flex;
+    .character-img {
+      // height: 500px;
       width: 420px;
+      object-fit: cover;
+    }
+    .info-part {
+      .description {
+        width: 420px;
+      }
+    }
+  }
+
+  .comics-id-container {
+    border: green solid 2px;
+    width: 60%;
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+
+    .comics-info {
+      border: red solid 2px;
+      height: 400px;
+      .comics-id-img {
+        height: 300px;
+        width: 180px;
+        object-fit: cover;
+      }
     }
   }
 }

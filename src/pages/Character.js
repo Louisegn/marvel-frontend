@@ -32,9 +32,8 @@ const Character = () => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div className="character-container">
-      <div>
-        {" "}
+    <div className="chara-page-container">
+      <div className="chara-card">
         <img
           className="character-img"
           src={data.thumbnail.path + "." + data.thumbnail.extension}
