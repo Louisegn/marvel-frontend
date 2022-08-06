@@ -29,6 +29,7 @@
       height: 356px;
       width: 194px;
       overflow: hidden;
+      position: relative;
 
       .comic-img {
         height: 206px;
@@ -37,6 +38,21 @@
       }
       .div-descript {
       }
+    }
+    .round {
+      border: none;
+      height: 40px;
+      width: 40px;
+      background-color: #e62429;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      cursor: pointer;
     }
   }
 }

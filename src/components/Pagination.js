@@ -1,9 +1,9 @@
 import "../assets/css/pagination.scss";
 
 const Pagination = ({ counter, setCounter, count }) => {
-  const nb = Math.ceil(count / 100) * 100;
-  console.log("NB", nb);
-  console.log("COUNTER", counter);
+  // const nb = Math.ceil(count / 100) * 100;
+  // console.log("NB", nb);
+  // console.log("COUNTER", counter);
 
   return (
     <div className="pagination-main">
@@ -16,7 +16,9 @@ const Pagination = ({ counter, setCounter, count }) => {
           Précédent
         </button>
       )}
-      <div>Page {counter / 100}</div>
+      <div>
+        Page {counter / 100}/{Math.ceil(count / 100) - 1}
+      </div>
       {counter <= Math.ceil(count / 100) * 100 - 200 && (
         <button
           onClick={() => {

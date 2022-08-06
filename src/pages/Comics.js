@@ -1,15 +1,18 @@
 import "../assets/css/comics.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Search from "../components/Search";
 import Pagination from "../components/Pagination";
 
-const Comics = () => {
+const Comics = ({ token, favorite }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [word, setWord] = useState("");
   const [counter, setCounter] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +53,23 @@ const Comics = () => {
                   alt=""
                 />
                 <div className="div-descript">{elem.description}</div>
+                <button
+                  className="round"
+                  onClick={() => {
+                    if (token === null) {
+                      navigate("/user/login");
+                    } else {
+                      const comicId = elem._id;
+                      // const charaId = "";
+                      console.log(comicId);
+                      favorite({ comicId });
+                    }
+                  }}
+                >
+                  <div>
+                    <i className="fa-solid fa-heart"></i>
+                  </div>
+                </button>
               </div>
               {/* )} */}
             </div>

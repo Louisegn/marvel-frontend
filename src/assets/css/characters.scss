@@ -4,21 +4,64 @@
   .chara-container {
     display: flex;
     flex-wrap: wrap;
-    border: solid green 3px;
+    // border: solid green 3px;
     justify-content: center;
 
     a {
       text-decoration: none;
-      color: black;
     }
     .chara-info {
-      border: blue solid 2px;
+      // border: blue solid 2px;
+      background-color: #202020;
+      margin: 10px;
+      color: white;
       height: 356px;
       width: 194px;
-      .chara-img {
-        height: 206px;
-        width: 194px;
-        object-fit: cover;
+      box-sizing: border-box;
+      position: relative;
+
+      .to-chara-link {
+        height: 300px;
+        border: blue solid 1px;
+        .chara-img {
+          height: 206px;
+          width: 194px;
+          object-fit: cover;
+          box-sizing: border-box;
+        }
+
+        .chara-separator {
+          border-top: solid red 10px;
+          box-sizing: border-box;
+        }
+        .bottom-info {
+          margin-top: 10px;
+          color: white;
+          // border: magenta solid 1px;
+          font-family: "roboto condensed", sans-serif;
+
+          h3 {
+            // border: aquamarine solid 1px;
+            font-size: 16px;
+            line-height: 30px;
+          }
+        }
+      }
+
+      .round {
+        border: none;
+        height: 40px;
+        width: 40px;
+        background-color: #e62429;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
       }
     }
   }

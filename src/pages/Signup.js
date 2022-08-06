@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import "../assets/css/signup.scss";
+
 const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -35,37 +37,43 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>S'inscrire</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="signup-main">
+      <h2>CREATE YOUR ACCOUNT</h2>
+      <form className="form-container" onSubmit={handleSubmit}>
         <input
+          className="input-text"
           type="text"
-          placeholde="Username"
+          placeholder="Username"
           value={username}
           onChange={(event) => {
             setUsername(event.target.value);
           }}
         />
         <input
+          className="input-text"
           type="text"
-          placeholde="Email"
+          placeholder="Email Adress"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
         <input
+          className="input-text"
           type="text"
-          placeholde="Password"
+          placeholder="Password"
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="Signup" />
-        <p>{errorMessage}</p>
+        <input className="input-submit" type="submit" value="CREATE ACCOUNT" />
+        <p className="error-msg">{errorMessage}</p>
       </form>
-      <Link to="/user/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <div className="sign-in">
+        <p>Already have an account?</p>
+        <Link to="/user/login">Sign In</Link>
+      </div>
     </div>
   );
 };

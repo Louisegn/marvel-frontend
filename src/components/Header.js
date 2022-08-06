@@ -6,33 +6,27 @@ const Header = ({ token, setUser }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="header-container">
+    <div className="header-main">
       <Link to="/">
         <img className="logo" src={logo} alt="" />
       </Link>
+      <div className="header-container">
+        <div className="header-nav">
+          <Link to="characters">PERSONNAGES</Link>
 
-      <div className="header-nav">
-        <ul>
-          <li>
-            <Link to="/">PERSONNAGES</Link>
-          </li>
-          <li>
-            <Link to="/comics">COMICS</Link>
-          </li>
-          <li>
+          <Link to="/comics">COMICS</Link>
+
+          {token === null ? (
+            <Link to="/user/login">FAVORIS</Link>
+          ) : (
             <Link to="/favorites">FAVORIS</Link>
-          </li>
-          {/* <li>
-          </li>
-          <li>
-          </li> */}
-        </ul>
-
+          )}
+        </div>
         <div className="JPPP">
           {token === null ? (
             <>
-              <Link to="/user/signup">SIGNUP</Link>
-              <Link to="/user/login">LOGIN</Link>
+              {/* <Link to="/user/signup">SIGNUP</Link> */}
+              <Link to="/user/login">SIGN IN</Link>
             </>
           ) : (
             <button
@@ -41,7 +35,7 @@ const Header = ({ token, setUser }) => {
                 navigate("/");
               }}
             >
-              Se déconnecter
+              LOG OUT
             </button>
           )}
         </div>

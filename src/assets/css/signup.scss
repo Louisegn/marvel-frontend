@@ -1,4 +1,4 @@
-.login-main {
+.signup-main {
   //   border: red solid 2px;
   height: 100vh;
   display: flex;
@@ -36,21 +36,22 @@
       cursor: pointer;
     }
   }
-  .separator {
-    border-bottom: #202020 solid 1px;
-    margin-top: 60px;
-    width: 330px;
-  }
-  a {
-    border: #202020 solid 2px;
-    height: 40px;
-    width: 200px;
-    text-decoration: none;
+
+  .sign-in {
+    // height: 40px;
+    // width: 200px;
     color: #202020;
     text-align: center;
     padding-top: 12px;
     box-sizing: border-box;
     margin-top: 30px;
-    cursor: pointer;
+    display: flex;
+    a {
+      color: #e62429;
+      margin-left: 6px;
+    }
+    a:hover {
+      text-decoration: none;
+    }
   }
 }

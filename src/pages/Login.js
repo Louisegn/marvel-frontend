@@ -2,7 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = ({ setUser }) => {
+import "../assets/css/login.scss";
+
+const Login = ({ setUser, setUserId }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,37 +24,42 @@ const Login = ({ setUser }) => {
       if (response.data) {
         // console.log("yesppp");
         setUser(response.data.token);
+        setUserId(response.data);
         navigate("/favorites");
       }
       console.log(response.data);
-      alert("ALLESS GOOOOD");
+      // alert("ALLESS GOOOOD");
     } catch (error) {
       console.log(error.message);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="login-main">
+      <h2>SIGN IN</h2>
+      <form className="form-container" onSubmit={handleSubmit}>
         <input
+          className="input-text"
           type="text"
-          placeholder="Adresse email"
+          placeholder="Email Adress"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
         <input
+          className="input-text"
           type="text"
-          placeholde="Mot de passe"
+          placeholder="Password"
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="Se connecter" />
+        <input className="input-submit" type="submit" value="SIGN IN" />
       </form>
-      <Link to="/user/signup">Pas encore de compte ? Inscris-toi !</Link>
+      <div className="separator"></div>
+      <Link to="/user/signup">CREATE AN ACCOUNT</Link>
     </div>
   );
 };
