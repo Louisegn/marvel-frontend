@@ -12,17 +12,17 @@ const Header = ({ token, setUser }) => {
       </Link>
       <div className="header-container">
         <div className="header-nav">
-          <Link to="characters">PERSONNAGES</Link>
+          <Link to="characters">CHARACTERS</Link>
 
           <Link to="/comics">COMICS</Link>
 
           {token === null ? (
             <Link to="/user/login">FAVORIS</Link>
           ) : (
-            <Link to="/favorites">FAVORIS</Link>
+            <Link to="/favorites">FAVORITES</Link>
           )}
         </div>
-        <div className="JPPP">
+        <div className="JPP">
           {token === null ? (
             <>
               {/* <Link to="/user/signup">SIGNUP</Link> */}

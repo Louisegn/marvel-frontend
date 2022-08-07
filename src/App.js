@@ -40,7 +40,7 @@ function App() {
       }
     };
     fetchData();
-  });
+  }, [token]);
   const setUser = (token) => {
     if (token !== null) {
       Cookies.set("token", token);
@@ -101,7 +101,9 @@ function App() {
           ></Route>
           <Route
             path="/comics"
-            element={<Comics token={token} favorite={favorite} />}
+            element={
+              <Comics token={token} favorite={favorite} userId={userId} />
+            }
           ></Route>
           <Route
             path="/character/:id"

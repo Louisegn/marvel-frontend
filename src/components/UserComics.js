@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../assets/css/favorites.scss";
 
 const UserComics = ({ userId }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,23 +26,26 @@ const UserComics = ({ userId }) => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div>
+    <div className="comics-container">
       <div>
-        <p>PUTAIN DE COMICS FAV</p>
-        {data.results.map((elem, index) => {
-          // console.log("yoyoyo");
-          // console.log(userId.favoritesChara);
-          if (userId.favoritesComics.indexOf(elem._id) !== -1) {
-            return (
-              <div key={index}>
-                <img
-                  src={elem.thumbnail.path + "." + elem.thumbnail.extension}
-                  alt=""
-                />
-              </div>
-            );
-          } else return null;
-        })}
+        <p className="title">COMICS FAV</p>
+        <div className="divdiv">
+          {data.results.map((elem, index) => {
+            // console.log("yoyoyo");
+            // console.log(userId.favoritesChara);
+            if (userId.favoritesComics.indexOf(elem._id) !== -1) {
+              return (
+                <div className="comics" key={index}>
+                  <img
+                    src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                    alt=""
+                  />
+                  <p>{elem.title}</p>
+                </div>
+              );
+            } else return null;
+          })}
+        </div>
       </div>
     </div>
   );

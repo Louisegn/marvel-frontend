@@ -1,2 +1,14 @@
 .search-container {
+  //   border: GREEN SOLID 2px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  input {
+    height: 34px;
+    width: 400px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: #202020 solid 1px;
+    color: #202020;
+  }
 }

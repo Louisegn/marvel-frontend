@@ -1,0 +1,66 @@
+.favorites-main {
+  //   border: green solid 2px;
+  .title {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+    color: #e62429;
+  }
+  .chara-container {
+    // border: red solid 2px;
+    .div-test {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .chara {
+        // border: blue solid 2px;
+        height: 356px;
+        width: 194px;
+        margin: 10px;
+        background-color: #202020;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+
+          height: 206px;
+        }
+        p {
+          color: white;
+        }
+      }
+    }
+    .separator {
+      border: #202020 solid 2px;
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+  .comics-container {
+    // border: red solid 2px;
+
+    .divdiv {
+      //   border: blue solid 2px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .comics {
+        height: 356px;
+        width: 194px;
+        margin: 10px;
+        background-color: #202020;
+        img {
+          width: 100%;
+          object-fit: cover;
+
+          height: 206px;
+        }
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}

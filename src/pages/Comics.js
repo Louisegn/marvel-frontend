@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Search from "../components/Search";
 import Pagination from "../components/Pagination";
 
-const Comics = ({ token, favorite }) => {
+const Comics = ({ token, favorite, userId }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [word, setWord] = useState("");
@@ -32,7 +32,7 @@ const Comics = ({ token, favorite }) => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div className="comics-page">
+    <div className="comics-main">
       <Search word={word} setWord={setWord} title="comics" />
 
       <Pagination
@@ -66,12 +66,22 @@ const Comics = ({ token, favorite }) => {
                     }
                   }}
                 >
-                  <div>
+                  {/* <div>
                     <i className="fa-solid fa-heart"></i>
+                  </div> */}
+                  <div className="heart">
+                    {userId ? (
+                      userId.favoritesChara.indexOf(elem._id) === -1 ? (
+                        <i className="fa-solid fa-heart nop"></i>
+                      ) : (
+                        <i className="fa-solid fa-heart yes"></i>
+                      )
+                    ) : (
+                      <i className="fa-solid fa-heart nop"></i>
+                    )}
                   </div>
                 </button>
               </div>
-              {/* )} */}
             </div>
           );
         })}

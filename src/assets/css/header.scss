@@ -1,9 +1,10 @@
 .header-main {
+  // border: rgb(14, 2, 242) SOLID 2px;
   background-color: #202020;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+
   height: 8rem;
 
   .logo {
@@ -14,6 +15,9 @@
     text-decoration: none;
   }
 
+  a:hover {
+    color: #e62429;
+  }
   .header-container {
     // border: greenyellow solid 2px;
     display: flex;
@@ -22,8 +26,11 @@
 
     .header-nav {
       // border: aquamarine solid 2px;
+      a {
+        margin-right: 20px;
+      }
     }
-    .JPPP {
+    .JPP {
       // border: magenta solid 2px;
       button {
         text-decoration: none;

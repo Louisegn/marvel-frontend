@@ -45,7 +45,9 @@ const Characters = ({ token, favorite, userId }) => {
       />
       <div className="chara-container">
         {data.results.map((elem, index) => {
-          // console.log(elem);
+          if (userId) {
+            // console.log(userId.favoritesChara);
+          }
           return (
             <div key={index}>
               <div className="chara-info">
@@ -65,19 +67,25 @@ const Characters = ({ token, favorite, userId }) => {
                   </div>
                 </Link>
                 <button
-                  // className={
-                  //   userId.favoritesChara.indexOf(elem._id) === -1 ? "nop" : "fav"
-                  // }
                   onClick={() => {
                     if (token === null) {
                       navigate("/user/login");
                     } else {
-                      favorite(elem._id);
+                      const charaId = elem._id;
+                      favorite({ charaId });
                     }
                   }}
                 >
-                  <div>
-                    <i className="fa-solid fa-heart"></i>
+                  <div className="heart">
+                    {userId ? (
+                      userId.favoritesChara.indexOf(elem._id) === -1 ? (
+                        <i className="fa-solid fa-heart nop"></i>
+                      ) : (
+                        <i className="fa-solid fa-heart yes"></i>
+                      )
+                    ) : (
+                      <i className="fa-solid fa-heart nop"></i>
+                    )}
                   </div>
                 </button>
               </div>

@@ -19,10 +19,16 @@
       width: 194px;
       box-sizing: border-box;
       position: relative;
+      // .chara-info:hover {
+      //   background-color: #e62429;
 
+      //   .chara-separator {
+      //     border-top: solid #202020 10px;
+      //   }
+      // }
       .to-chara-link {
         height: 300px;
-        border: blue solid 1px;
+        // border: blue solid 1px;
         .chara-img {
           height: 206px;
           width: 194px;
@@ -31,9 +37,10 @@
         }
 
         .chara-separator {
-          border-top: solid red 10px;
+          border-top: solid #e62429 10px;
           box-sizing: border-box;
         }
+
         .bottom-info {
           margin-top: 10px;
           color: white;
@@ -47,7 +54,14 @@
           }
         }
       }
-
+      .heart {
+        .nop {
+          color: black;
+        }
+        .yes {
+          color: #e62429;
+        }
+      }
       .round {
         border: none;
         height: 40px;

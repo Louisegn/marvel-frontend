@@ -8,26 +8,33 @@ const Pagination = ({ counter, setCounter, count }) => {
   return (
     <div className="pagination-main">
       {counter >= 100 && (
-        <button
-          onClick={() => {
-            setCounter(counter - 100);
-          }}
-        >
-          Précédent
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              setCounter(counter - 100);
+            }}
+          >
+            <i className="fa-solid fa-caret-left"></i>
+            <p>PREV</p>
+          </button>
+        </div>
       )}
-      <div>
-        Page {counter / 100}/{Math.ceil(count / 100) - 1}
+      <div className="index">
+        {counter / 100}/{Math.ceil(count / 100) - 1}
       </div>
-      {counter <= Math.ceil(count / 100) * 100 - 200 && (
-        <button
-          onClick={() => {
-            setCounter(counter + 100);
-          }}
-        >
-          Suivant
-        </button>
-      )}
+      <div>
+        {counter <= Math.ceil(count / 100) * 100 - 200 && (
+          <button
+            onClick={() => {
+              setCounter(counter + 100);
+            }}
+          >
+            <p>NEXT</p>
+
+            <i className="fa-solid fa-caret-right"></i>
+          </button>
+        )}
+      </div>
     </div>
   );
 };

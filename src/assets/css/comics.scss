@@ -1,35 +1,21 @@
-// .comics-page {
-//   border: green solid 2px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   .comics-container {
-//     border: blue solid 2px;
-//     width: 194px;
-//     // display: flex;
-//     // flex-wrap: wrap;
-//   }
-//   .comic-img {
-//     height: 206px;
-//     width: 194px;
-//     object-fit: cover;
-//   }
-// }
-
-.comics-page {
+.comics-main {
   // background-color: black;
 
   .comics-container {
     display: flex;
     flex-wrap: wrap;
-    border: solid green 3px;
+    // border: solid green 3px;
     justify-content: center;
 
     .comics-info {
-      border: blue solid 2px;
+      // border: blue solid 2px;
+      background-color: #202020;
+      margin: 10px;
       height: 356px;
       width: 194px;
       overflow: hidden;
       position: relative;
+      color: white;
 
       .comic-img {
         height: 206px;
