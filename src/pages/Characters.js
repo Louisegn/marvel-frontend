@@ -1,7 +1,7 @@
 import "../assets/css/characters.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import cover from "../assets/css/img/marvel-comic-cover.jpeg";
 
 import Search from "../components/Search";
@@ -51,8 +51,13 @@ const Characters = ({ token, favorite, userId }) => {
           return (
             <div key={index}>
               <div className="chara-info">
-                <Link className="to-chara-link" to={`/character/${elem._id}`}>
-                  <div>
+                <div
+                  className="to-chara-link"
+                  onClick={() => {
+                    navigate(`/character/${elem._id}`);
+                  }}
+                >
+                  <div className="chara-img--div">
                     <img
                       className="chara-img"
                       src={elem.thumbnail.path + "." + elem.thumbnail.extension}
@@ -61,11 +66,12 @@ const Characters = ({ token, favorite, userId }) => {
                   </div>
 
                   <div className="chara-separator"></div>
+
                   <div className="bottom-info">
                     <h3>{elem.name}</h3>
-                    <p>{elem.description}</p>
+                    {/* <p>{elem.description}</p> */}
                   </div>
-                </Link>
+                </div>
                 <button
                   onClick={() => {
                     if (token === null) {

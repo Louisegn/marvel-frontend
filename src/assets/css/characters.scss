@@ -19,33 +19,36 @@
       width: 194px;
       box-sizing: border-box;
       position: relative;
-      // .chara-info:hover {
-      //   background-color: #e62429;
-
-      //   .chara-separator {
-      //     border-top: solid #202020 10px;
-      //   }
-      // }
       .to-chara-link {
-        height: 300px;
-        // border: blue solid 1px;
-        .chara-img {
-          height: 206px;
-          width: 194px;
-          object-fit: cover;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        // border: green solid 2px;
+        cursor: pointer;
+        .chara-img--div {
           box-sizing: border-box;
+          height: 60%;
+
+          .chara-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            box-sizing: border-box;
+          }
         }
 
         .chara-separator {
-          border-top: solid #e62429 10px;
+          border: solid #e62429 4px;
           box-sizing: border-box;
         }
 
         .bottom-info {
-          margin-top: 10px;
+          // margin-top: 10px;
+          height: calc(40% - 8px);
+          padding: 10px;
           color: white;
           // border: magenta solid 1px;
-          font-family: "roboto condensed", sans-serif;
+          box-sizing: border-box;
 
           h3 {
             // border: aquamarine solid 1px;
@@ -54,29 +57,45 @@
           }
         }
       }
-      .heart {
-        .nop {
-          color: black;
-        }
-        .yes {
-          color: #e62429;
+      .to-chara-link:hover {
+        .bottom-info {
+          background-color: #e62429;
         }
       }
-      .round {
-        border: none;
-        height: 40px;
-        width: 40px;
-        background-color: #e62429;
-        border-radius: 50%;
+      button {
         position: absolute;
-        bottom: 10px;
-        right: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
+        top: 6px;
+        right: 6px;
+        border-radius: 100px;
+        height: 30px;
+        width: 30px;
+        border: none;
         cursor: pointer;
+        .heart {
+          .nop {
+            color: black;
+          }
+          .yes {
+            color: #e62429;
+          }
+        }
       }
+
+      // .round {
+      //   border: none;
+      //   height: 40px;
+      //   width: 40px;
+      //   background-color: #e62429;
+      //   border-radius: 50%;
+      //   position: absolute;
+      //   bottom: 10px;
+      //   right: 10px;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   color: white;
+      //   cursor: pointer;
+      // }
     }
   }
 }

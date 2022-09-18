@@ -75,12 +75,12 @@ function App() {
           "https://project-marvel-back.herokuapp.com/user/favorites",
           {
             userId: userId._id,
-            comicsId: comicId,
+            comicId: comicId,
           }
         );
         setUserId(response.data);
       }
-      // console.log("coucou");
+      console.log("coucou");
       // console.log(response.data);
     } catch (error) {
       console.log(error.message);
