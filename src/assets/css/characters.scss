@@ -1,6 +1,7 @@
 .chara-page {
   // background-color: black;
   // color: white;
+
   .chara-container {
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +26,8 @@
         box-sizing: border-box;
         // border: green solid 2px;
         cursor: pointer;
+        z-index: 3;
+
         .chara-img--div {
           box-sizing: border-box;
           height: 60%;
@@ -38,30 +41,40 @@
         }
 
         .chara-separator {
-          border: solid #e62429 4px;
+          border: solid #e62429 2px;
           box-sizing: border-box;
         }
 
         .bottom-info {
-          // margin-top: 10px;
-          height: calc(40% - 8px);
+          height: calc(40% - 4px);
           padding: 10px;
-          color: white;
           // border: magenta solid 1px;
           box-sizing: border-box;
-
-          h3 {
+          .chara--name {
             // border: aquamarine solid 1px;
             font-size: 16px;
-            line-height: 30px;
+            z-index: 4;
+            position: relative;
+            color: white;
           }
         }
-      }
-      .to-chara-link:hover {
-        .bottom-info {
+        .overlay {
+          position: absolute;
+          top: 60%;
+          left: 0;
+          right: 0;
           background-color: #e62429;
+          overflow: hidden;
+          width: 100%;
+          height: 0;
+          transition: 0.5s ease;
         }
       }
+
+      .to-chara-link:hover .overlay {
+        height: 40%;
+      }
+
       button {
         position: absolute;
         top: 6px;
@@ -76,6 +89,9 @@
             color: black;
           }
           .yes {
+            color: #e62429;
+          }
+          .nop:hover {
             color: #e62429;
           }
         }
@@ -98,4 +114,7 @@
       // }
     }
   }
+}
+
+@keyframes anime {
 }

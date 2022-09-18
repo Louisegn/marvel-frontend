@@ -68,9 +68,11 @@ const Characters = ({ token, favorite, userId }) => {
                   <div className="chara-separator"></div>
 
                   <div className="bottom-info">
-                    <h3>{elem.name}</h3>
+                    <p className="chara--name">{elem.name}</p>
+                    {/* <div className="overlay"></div> */}
                     {/* <p>{elem.description}</p> */}
                   </div>
+                  <div className="overlay"></div>
                 </div>
                 <button
                   onClick={() => {
