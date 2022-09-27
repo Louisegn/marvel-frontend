@@ -76,12 +76,14 @@ const Characters = ({ token, favorite, userId }) => {
                 </div>
                 <button
                   onClick={() => {
-                    if (token === null) {
-                      navigate("/user/login");
-                    } else {
-                      const charaId = elem._id;
-                      favorite({ charaId });
-                    }
+                    console.log(elem);
+
+                    // if (token === null) {
+                    //   navigate("/user/login");
+                    // } else {
+                    //   const charaId = elem._id;
+                    //   favorite({ charaId });
+                    // }
                   }}
                 >
                   <div className="heart">

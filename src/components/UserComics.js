@@ -28,7 +28,7 @@ const UserComics = ({ userId }) => {
   ) : (
     <div className="comics-container">
       <div>
-        <p className="title">COMICS FAV</p>
+        <p className="title">FAVORITES COMICS</p>
         <div className="divdiv">
           {data.results.map((elem, index) => {
             // console.log("yoyoyo");

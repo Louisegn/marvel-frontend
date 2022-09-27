@@ -4,15 +4,16 @@ import "../assets/css/favorites.scss";
 
 const UserChara = ({ userId }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
+  // console.log(userId.favoritesChara);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://project-marvel-back.herokuapp.com/characters?name=&skip=`
+        const response = await axios.post(
+          `http://localhost:3000/character/by-id`,
+          userId.favoritesChara
         );
-        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -26,23 +27,19 @@ const UserChara = ({ userId }) => {
   ) : (
     <div className="chara-container">
       <div>
-        <p className="title">CHARA FAV</p>
+        <p className="title">FAVORITES CHARA</p>
         <div className="div-test">
-          {data.results.map((elem, index) => {
-            //   console.log(userId.favoritesChara);
-            //console.log(elem._id);
-            if (userId.favoritesChara.indexOf(elem._id) !== -1) {
-              return (
-                <div className="chara" key={index}>
-                  <img
-                    src={elem.thumbnail.path + "." + elem.thumbnail.extension}
-                    alt=""
-                  />
-                  <p>{elem.name}</p>
-                  <p>{elem.description}</p>
-                </div>
-              );
-            } else return null;
+          {data.map((elem, index) => {
+            return (
+              <div className="chara" key={index}>
+                <img
+                  src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                  alt=""
+                />
+                <p>{elem.name}</p>
+                {/* <p>{elem.description}</p> */}
+              </div>
+            );
           })}
         </div>
       </div>

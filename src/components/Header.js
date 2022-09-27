@@ -22,7 +22,7 @@ const Header = ({ token, setUser }) => {
             <Link to="/favorites">FAVORITES</Link>
           )}
         </div>
-        <div className="JPP">
+        <div className="sign">
           {token === null ? (
             <>
               {/* <Link to="/user/signup">SIGNUP</Link> */}

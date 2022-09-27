@@ -71,8 +71,11 @@ function App() {
         );
         setUserId(response.data);
       } else {
+        console.log("coucou");
+
         const response = await axios.post(
-          "https://project-marvel-back.herokuapp.com/user/favorites",
+          // "https://project-marvel-back.herokuapp.com/user/favorites",
+          "http://localhost:3000/user/favorites",
           {
             userId: userId._id,
             comicId: comicId,
@@ -80,7 +83,6 @@ function App() {
         );
         setUserId(response.data);
       }
-      console.log("coucou");
       // console.log(response.data);
     } catch (error) {
       console.log(error.message);

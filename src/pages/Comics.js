@@ -59,9 +59,9 @@ const Comics = ({ token, favorite, userId }) => {
                     if (token === null) {
                       navigate("/user/login");
                     } else {
-                      const comicId = elem._id;
+                      const comicId = elem;
                       // const charaId = "";
-                      console.log(comicId);
+                      console.log(elem);
                       favorite({ comicId });
                     }
                   }}
