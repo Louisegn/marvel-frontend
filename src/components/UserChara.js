@@ -1,35 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "../assets/css/favorites.scss";
 
 const UserChara = ({ userId }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
-
-  // console.log(userId.favoritesChara);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(
-          `http://localhost:3000/character/by-id`,
-          userId.favoritesChara
-        );
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.meassage);
-      }
-    };
-    fetchData();
-  }, []);
-  return isLoading ? (
-    <span>En cours de chargement...</span>
-  ) : (
+  // console.log(userId);
+  return (
     <div className="chara-container">
       <div>
         <p className="title">FAVORITES CHARA</p>
         <div className="div-test">
-          {data.map((elem, index) => {
+          {userId.favoritesChara.map((elem, index) => {
             return (
               <div className="chara" key={index}>
                 <img

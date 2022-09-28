@@ -74,8 +74,7 @@ function App() {
         console.log("coucou");
 
         const response = await axios.post(
-          // "https://project-marvel-back.herokuapp.com/user/favorites",
-          "http://localhost:3000/user/favorites",
+          "https://project-marvel-back.herokuapp.com/user/favorites",
           {
             userId: userId._id,
             comicId: comicId,

@@ -1,10 +1,12 @@
 .home-main {
-  //   border: green solid 2px;
-  height: 100vh;
+  background-color: #202020;
+  // border: green solid 2px;
+  height: calc(100vh - 8rem);
   display: flex;
   justify-content: center;
+  align-items: center;
   .banner {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     object-fit: cover;
@@ -18,7 +20,7 @@
     a {
       text-decoration: none;
       font-size: 40px;
-      margin-top: 60px;
+      margin: 20px;
       // color: #202020;
       color: white;
       font-weight: 1000;
@@ -26,6 +28,16 @@
 
     a:hover {
       color: #e62429;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .home-main {
+    .home-container {
+      a {
+        font-size: 30px;
+      }
     }
   }
 }

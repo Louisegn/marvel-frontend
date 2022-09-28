@@ -77,13 +77,12 @@ const Characters = ({ token, favorite, userId }) => {
                 <button
                   onClick={() => {
                     console.log(elem);
-
-                    // if (token === null) {
-                    //   navigate("/user/login");
-                    // } else {
-                    //   const charaId = elem._id;
-                    //   favorite({ charaId });
-                    // }
+                    if (token === null) {
+                      navigate("/user/login");
+                    } else {
+                      const charaId = elem;
+                      favorite({ charaId });
+                    }
                   }}
                 >
                   <div className="heart">

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  box-sizing: border-box;
   height: 8rem;
 
   .logo {
@@ -22,12 +22,14 @@
     // border: greenyellow solid 2px;
     display: flex;
     width: 100%;
+    height: 100%;
     justify-content: space-around;
-
+    padding-top: 10px;
+    box-sizing: border-box;
     .header-nav {
       // border: aquamarine solid 2px;
       a {
-        margin-right: 20px;
+        margin: 0 10px;
       }
     }
     .sign {
@@ -43,6 +45,22 @@
       }
       button:hover {
         color: #e62429;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .header-main {
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .header-nav {
+        // border: aquamarine solid 2px;
+        a {
+          margin: 0 4px;
+        }
       }
     }
   }
