@@ -108,11 +108,15 @@ function App() {
           ></Route>
           <Route
             path="/character/:id"
-            element={<Character favorite={favorite} />}
+            element={
+              <Character token={token} favorite={favorite} userId={userId} />
+            }
           ></Route>
           <Route
             path="/favorites"
-            element={<Favorites userId={userId} />}
+            element={
+              <Favorites token={token} favorite={favorite} userId={userId} />
+            }
           ></Route>
           <Route
             path="/user/signup"

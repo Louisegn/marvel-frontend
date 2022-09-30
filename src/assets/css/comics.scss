@@ -1,44 +1,117 @@
 .comics-main {
   // background-color: black;
-
+  padding: 0 140px;
   .comics-container {
     display: flex;
     flex-wrap: wrap;
     // border: solid green 3px;
     justify-content: center;
-
     .comics-info {
+      box-sizing: border-box;
       // border: blue solid 2px;
       background-color: #202020;
-      margin: 10px;
-      height: 356px;
-      width: 194px;
-      overflow: hidden;
+      margin: 20px;
+      height: 534px;
+      width: 291px;
       position: relative;
       color: white;
+      .comic-img--div {
+        box-sizing: border-box;
+        height: 60%;
+        .comic-img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          box-sizing: border-box;
+        }
+      }
+      .chara-separator {
+        border: solid #e62429 2px;
+        box-sizing: border-box;
+      }
+      .bottom-info {
+        // border: green solid 3px;
+        box-sizing: border-box;
+        height: calc(40% - 2px);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .chara-separator {
+          border: solid #e62429 2px;
+          box-sizing: border-box;
+          width: 90%;
+        }
+        .comic--title {
+          height: 22%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 6px;
+          p {
+            font-size: 18px;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+          }
+        }
+        .div-descript {
+          // border: blue solid 1px;
+          background-color: #202020;
+          height: 70%;
+          width: 90%;
+          padding-top: 10px;
+          overflow: hidden;
+          overflow-y: scroll;
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+          box-sizing: border-box;
+          p {
+            line-height: 22px;
+          }
+        }
+        .div-descript::-webkit-scrollbar {
+          display: none;
+        }
+      }
 
-      .comic-img {
-        height: 206px;
-        width: 194px;
-        object-fit: cover;
-      }
-      .div-descript {
+      button {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        border-radius: 100px;
+        height: 30px;
+        width: 30px;
+        border: none;
+        cursor: pointer;
+        .heart {
+          .nop {
+            color: black;
+          }
+          .yes {
+            color: #e62429;
+          }
+          .nop:hover {
+            color: #e62429;
+          }
+        }
       }
     }
-    .round {
-      border: none;
-      height: 40px;
-      width: 40px;
-      background-color: #e62429;
-      border-radius: 50%;
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      cursor: pointer;
-    }
+
+    // .round {
+    //   border: none;
+    //   height: 40px;
+    //   width: 40px;
+    //   background-color: #e62429;
+    //   border-radius: 50%;
+    //   position: absolute;
+    //   bottom: 10px;
+    //   right: 10px;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   color: white;
+    //   cursor: pointer;
+    // }
   }
 }

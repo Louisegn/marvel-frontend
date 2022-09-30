@@ -42,17 +42,41 @@ const Comics = ({ token, favorite, userId }) => {
       />
       <div className="comics-container">
         {data.results.map((elem, index) => {
+          if (elem.description) {
+            elem.description = elem.description.replaceAll("&#39;", "'");
+          }
+
+          let fav = false;
+          if (userId) {
+            for (let i = 0; userId.favoritesComics.length > i; i++) {
+              if (userId.favoritesComics[i]._id === elem._id) {
+                fav = true;
+              }
+            }
+          }
           return (
             <div key={index}>
-              {/* {elem.title.indexOf(word) !== -1 && ( */}
               <div className="comics-info">
-                <div>{elem.title}</div>
-                <img
-                  className="comic-img"
-                  src={elem.thumbnail.path + "." + elem.thumbnail.extension}
-                  alt=""
-                />
-                <div className="div-descript">{elem.description}</div>
+                <div className="comic-img--div">
+                  <img
+                    className="comic-img"
+                    src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                    alt=""
+                  />
+                </div>
+                <div className="chara-separator"></div>
+                <div className="bottom-info">
+                  <div className="comic--title">
+                    <p>{elem.title}</p>
+                  </div>
+                  <div className="chara-separator"></div>
+
+                  <div className="div-descript">
+                    <p>{elem.description}</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
                 <button
                   className="round"
                   onClick={() => {
@@ -71,7 +95,7 @@ const Comics = ({ token, favorite, userId }) => {
                   </div> */}
                   <div className="heart">
                     {userId ? (
-                      userId.favoritesChara.indexOf(elem._id) === -1 ? (
+                      fav === false ? (
                         <i className="fa-solid fa-heart nop"></i>
                       ) : (
                         <i className="fa-solid fa-heart yes"></i>
