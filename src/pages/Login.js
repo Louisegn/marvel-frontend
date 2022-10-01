@@ -27,7 +27,7 @@ const Login = ({ setUser, setUserId }) => {
         setUserId(response.data);
         navigate("/favorites");
       }
-      console.log(response.data);
+      // console.log(response.data);
       // alert("ALLESS GOOOOD");
     } catch (error) {
       console.log(error.message);

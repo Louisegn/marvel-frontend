@@ -82,7 +82,7 @@ const Characters = ({ token, favorite, userId }) => {
                 </div>
                 <button
                   onClick={() => {
-                    console.log(userId);
+                    // console.log(userId);
                     if (token === null) {
                       navigate("/user/login");
                     } else {

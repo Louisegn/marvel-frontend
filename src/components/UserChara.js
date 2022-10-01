@@ -11,7 +11,6 @@ const UserChara = ({ token, favorite, userId }) => {
         <p className="title">FAVORITES CHARA</p>
         <div className="div-test">
           {userId.favoritesChara.map((elem, index) => {
-            let fav = false;
             return (
               <div className="chara-info" key={index}>
                 {/* <img
@@ -38,14 +37,12 @@ const UserChara = ({ token, favorite, userId }) => {
 
                   <div className="bottom-info">
                     <p className="chara--name">{elem.name}</p>
-                    {/* <div className="overlay"></div> */}
-                    {/* <p>{elem.description}</p> */}
                   </div>
                   <div className="overlay"></div>
                 </div>
                 <button
                   onClick={() => {
-                    console.log(userId);
+                    // console.log(userId);
                     if (token === null) {
                       navigate("/user/login");
                     } else {

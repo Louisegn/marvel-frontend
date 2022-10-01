@@ -48,7 +48,7 @@ function App() {
       Cookies.remove("token");
     }
     setToken(token);
-    console.log("YOOO", token);
+    // console.log("YOOO", token);
   };
 
   const favorite = async ({ comicId, charaId }) => {
@@ -71,7 +71,7 @@ function App() {
         );
         setUserId(response.data);
       } else {
-        console.log("coucou");
+        // console.log("coucou");
 
         const response = await axios.post(
           "https://project-marvel-back.herokuapp.com/user/favorites",

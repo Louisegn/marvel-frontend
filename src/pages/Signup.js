@@ -24,7 +24,7 @@ const Signup = ({ setUser }) => {
         }
       );
       if (response.data) {
-        console.log("yesppp");
+        // console.log("yesppp");
         setUser(response.data.token);
         navigate("/favorites");
       }

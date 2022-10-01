@@ -85,7 +85,7 @@ const Comics = ({ token, favorite, userId }) => {
                     } else {
                       const comicId = elem;
                       // const charaId = "";
-                      console.log(elem);
+                      // console.log(elem);
                       favorite({ comicId });
                     }
                   }}
